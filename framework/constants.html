@@ -18,6 +18,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -54,10 +55,12 @@
 <li class="toctree-l2"><a class="reference internal" href="quantity_points.html">Quantity Points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quantity_kinds.html">Quantity Kinds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dimensions.html">Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magnitudes.html">Magnitudes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="units.html">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arithmetics.html">Arithmetics</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Quantity Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conversions_and_casting.html">Conversions and Casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="angular_units.html">Angular Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_output.html">Text Output</a></li>
 </ul>
 </li>
@@ -118,21 +121,21 @@ compatibility as exact values of physical constants tend to change with time
 (in most cases they are getting more and more accurate with every
 specification release).</p>
 <p>For example the speed of light constant in <a class="reference internal" href="../glossary.html#term-SI"><span class="xref std std-term">SI</span></a> is defined as:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">si</span><span class="o">::</span><span class="n">si2019</span> <span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">si</span><span class="o">::</span><span class="nn">si2019</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="n">Representation</span> <span class="n">Rep</span> <span class="o">=</span> <span class="kt">double</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">speed_of_light</span> <span class="o">=</span> <span class="n">speed</span><span class="o">&lt;</span><span class="n">metre_per_second</span><span class="p">,</span> <span class="n">Rep</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">299792458</span><span class="p">);</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="n">Representation</span><span class="w"> </span><span class="n">Rep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kr">inline</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">speed_of_light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="o">&lt;</span><span class="n">metre_per_second</span><span class="p">,</span><span class="w"> </span><span class="n">Rep</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">299792458</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>The same constant defined for natural units may be provided as:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">natural</span> <span class="p">{</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">natural</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="k">template</span><span class="o">&lt;</span><span class="n">Representation</span> <span class="n">Rep</span> <span class="o">=</span> <span class="kt">double</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">speed_of_light</span> <span class="o">=</span> <span class="n">speed</span><span class="o">&lt;</span><span class="n">one</span><span class="p">,</span> <span class="n">Rep</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="n">Representation</span><span class="w"> </span><span class="n">Rep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"></span>
+<span class="kr">inline</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">speed_of_light</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="o">&lt;</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">Rep</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
